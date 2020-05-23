@@ -141,7 +141,7 @@ class _PlantTabState extends State<PlantTab> {
                         width: 32,
                         height: 32,
                       ),
-                      onPressed: () => print('Add to cart'),
+                      onPressed: () => print('Plant me'),
                     ),
                   ],
                 )),

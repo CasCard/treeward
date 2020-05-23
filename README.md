@@ -4,7 +4,7 @@ A tree reward based app
 
 ## A inital preview of the app
 
-![treewards screenshot](preview.png =200x100)
+<img src="preview.png" width="200">
 
 ## Getting Started
 

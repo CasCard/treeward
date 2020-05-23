@@ -2,6 +2,10 @@
 
 A tree reward based app
 
+## A inital preview of the app
+
+<img src="preview.png" width="200">
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.

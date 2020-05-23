@@ -17,7 +17,7 @@ class ShopScreen extends StatelessWidget {
                 Text(
                   "Rewards: $rewards",
                   style: TextStyle(
-                      color: Colors.black87, fontWeight: FontWeight.w700),
+                      color: Colors.lightGreen, fontWeight: FontWeight.w700),
                 ),
                 Padding(padding: EdgeInsets.only(right: 20)),
                 Text(
@@ -29,6 +29,9 @@ class ShopScreen extends StatelessWidget {
                 ),
               ],
             ),
+            actions: <Widget>[
+              IconButton(icon: Icon(Icons.shopping_cart), onPressed: null)
+            ],
             backgroundColor: Colors.white,
             elevation: 0,
             bottom: TabBar(

@@ -117,18 +117,34 @@ class _PlantTabState extends State<PlantTab> {
             ),
             Positioned(
                 bottom: 4.0,
-                child: RawMaterialButton(
-                  padding: EdgeInsets.all(15.0),
-                  shape: CircleBorder(),
-                  elevation: 2.0,
-                  fillColor: Colors.black,
-                  child: Icon(
-                    Icons.add_shopping_cart,
-                    color: Colors.white,
-                    size: 30.0,
-                  ),
-                  onPressed: () => print('Add to cart'),
-                ))
+                child: Row(
+                  children: <Widget>[
+                    RawMaterialButton(
+                      padding: EdgeInsets.all(15.0),
+                      shape: CircleBorder(),
+                      elevation: 2.0,
+                      fillColor: Colors.black,
+                      child: Icon(
+                        Icons.add_shopping_cart,
+                        color: Colors.white,
+                        size: 30.0,
+                      ),
+                      onPressed: () => print('Add to cart'),
+                    ),
+                    RawMaterialButton(
+                      padding: EdgeInsets.all(15.0),
+                      shape: CircleBorder(),
+                      elevation: 2.0,
+                      fillColor: Colors.black,
+                      child: Image.asset(
+                        'assets/images/gardening.png',
+                        width: 32,
+                        height: 32,
+                      ),
+                      onPressed: () => print('Add to cart'),
+                    ),
+                  ],
+                )),
           ],
         ),
       ),

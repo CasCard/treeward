@@ -2,8 +2,19 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:treeward/widgets/items_list.dart';
 import 'package:treeward/screens/add_item_screen.dart';
+import 'package:treeward/models/plant_item.dart';
 
-class SellTab extends StatelessWidget {
+class SellTab extends StatefulWidget {
+  @override
+  _SellTabState createState() => _SellTabState();
+}
+
+class _SellTabState extends State<SellTab> {
+  List<Item> items = [
+    Item(name: 'Mango', price: "20", quantity: "2"),
+    Item(name: 'Sunflower', price: "2", quantity: "5")
+  ];
+
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -20,7 +31,16 @@ class SellTab extends StatelessWidget {
               child: Container(
                 padding: EdgeInsets.only(
                     bottom: MediaQuery.of(context).viewInsets.bottom),
-                child: AddItemScreen(),
+                child: AddItemScreen(
+                    (newPlantTitle, newPlantPrice, newPlantQuantity) {
+                  setState(() {
+                    items.add(Item(
+                        name: newPlantTitle,
+                        price: newPlantPrice,
+                        quantity: newPlantQuantity));
+                  });
+                  Navigator.pop(context);
+                }),
               ),
             ),
           );
@@ -53,7 +73,7 @@ class SellTab extends StatelessWidget {
                     topLeft: Radius.circular(20.0),
                     topRight: Radius.circular(20.0),
                   )),
-              child: ItemList(),
+              child: ItemList(items),
             ),
           )
         ],
@@ -61,6 +81,3 @@ class SellTab extends StatelessWidget {
     );
   }
 }
-
-
-

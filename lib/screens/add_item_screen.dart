@@ -2,8 +2,15 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class AddItemScreen extends StatelessWidget {
+  final Function addItemCallback;
+
+  AddItemScreen(this.addItemCallback);
+
   @override
   Widget build(BuildContext context) {
+    String newPlantName;
+    String newPlantPrice;
+    String newPlantQuantity;
     return Container(
       color: Color(0xFF757575),
       child: Container(
@@ -28,6 +35,9 @@ class AddItemScreen extends StatelessWidget {
             TextField(
               autofocus: true,
               textAlign: TextAlign.center,
+              onChanged: (newName) {
+                newPlantName = newName;
+              },
             ),
             Text(
               'Price',
@@ -36,6 +46,9 @@ class AddItemScreen extends StatelessWidget {
             TextField(
               autofocus: true,
               textAlign: TextAlign.center,
+              onChanged: (newPrice) {
+                newPlantPrice = newPrice;
+              },
             ),
             Text(
               'Quantity',
@@ -44,10 +57,16 @@ class AddItemScreen extends StatelessWidget {
             TextField(
               autofocus: true,
               textAlign: TextAlign.center,
+              onChanged: (newQuantity) {
+                newPlantQuantity = newQuantity;
+              },
             ),
             FlatButton(
                 color: Colors.lightBlueAccent,
-                onPressed: () {},
+                onPressed: () {
+                  addItemCallback(
+                      newPlantName, newPlantPrice, newPlantQuantity);
+                },
                 child: Text('Add', style: TextStyle(color: Colors.white)))
           ],
         ),

@@ -1,12 +1,26 @@
 import 'package:flutter/material.dart';
 
 class ItemTile extends StatelessWidget {
+  final bool isChecked;
+  final String plantTitle;
+  final String plantPrice;
+  final String plantQuantity;
+  final Function checkboxCallback;
+
+  ItemTile(
+      {this.isChecked,
+      this.plantTitle,
+      this.plantPrice,
+      this.plantQuantity,
+      this.checkboxCallback});
+
   @override
   Widget build(BuildContext context) {
     return ListTile(
       leading: Text(
-        'Bamboo',
+        plantTitle,
         style: TextStyle(
+          decoration: isChecked ? TextDecoration.lineThrough : null,
           color: Colors.white,
           fontSize: 20.0,
         ),
@@ -17,7 +31,7 @@ class ItemTile extends StatelessWidget {
             width: 30,
           ),
           Text(
-            "10 \$",
+            "$plantPrice \$",
             style: TextStyle(
               color: Colors.white,
               fontSize: 20.0,
@@ -27,7 +41,7 @@ class ItemTile extends StatelessWidget {
             width: 30,
           ),
           Text(
-            "3",
+            "$plantQuantity",
             style: TextStyle(
               color: Colors.white,
               fontSize: 20.0,
@@ -35,13 +49,12 @@ class ItemTile extends StatelessWidget {
           ),
         ],
       ),
-      trailing: IconButton(
-        icon: Icon(
-          Icons.delete,
-          color: Colors.white,
-        ),
-        onPressed: null,
+      trailing: Checkbox(
+        activeColor: Colors.lightBlueAccent,
+        value: isChecked,
+        onChanged: checkboxCallback,
       ),
     );
   }
 }
+

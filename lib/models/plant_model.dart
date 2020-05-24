@@ -37,7 +37,7 @@ final List<Plant> plants=[
   Plant(
     imageUrl: 'assets/images/plant2.png',
     name: 'Areca Palm',
-    category: 'New Arrival',
+    category: 'Both',
     price: 42,
     size: 'Large',
     description:
@@ -46,8 +46,8 @@ final List<Plant> plants=[
   Plant(
     imageUrl: 'assets/images/plant3.png',
     name: 'Snake Plant',
-    category: 'New Arrival',
-    price: 42,
+    category: 'Indoor',
+    price: 11,
     size: 'Large',
     description:
     'It’s easy to care for, and will grow nicely in a sunny window or a spot that only has indirect light. You don’t even have to be all that regular watering it as it will do fine in dry soil.\n In fact, over-watering is one of the big problems with snake plants. Snake plants are an excellent choice for any room in the house and will help remove formaldehyde from your air.',
@@ -55,9 +55,9 @@ final List<Plant> plants=[
   Plant(
     imageUrl: 'assets/images/plant4.png',
     name: 'Tulsi',
-    category: 'New Arrival',
-    price: 42,
-    size: 'Large',
+    category: 'Both',
+    price: 10,
+    size: 'Medium',
     description:
     'Mostly known as Holy Basil. It is native to India and mostly cultivated in south-eastern Asia. It is commonly used for treating Asthma, cold, sore throat, high bp and cholesterol.Also used as a stress relaxant and inflammation controller.',
   ),

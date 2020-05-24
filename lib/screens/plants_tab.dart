@@ -141,7 +141,24 @@ class _PlantTabState extends State<PlantTab> {
                         width: 32,
                         height: 32,
                       ),
-                      onPressed: () => print('Plant me'),
+                      onPressed: () => showDialog(
+                          context: context,
+                          barrierDismissible: true,
+                          builder: (BuildContext context) {
+                            return AlertDialog(
+                              title: Text("Plant this tree"),
+                              content: Text(
+                                  "Do you have seed/sapling for this plant?"),
+                              actions: <Widget>[
+                                FlatButton(
+                                    onPressed: () => print('Yes'),
+                                    child: Text("YES")),
+                                FlatButton(
+                                    onPressed: () => print('No'),
+                                    child: Text("NO"))
+                              ],
+                            );
+                          }),
                     ),
                   ],
                 )),
